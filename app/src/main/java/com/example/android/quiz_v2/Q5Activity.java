@@ -13,7 +13,7 @@ public class Q5Activity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_questions);
+        setContentView(R.layout.row);
         getSupportFragmentManager().beginTransaction().replace(R.id.container, new Q5Fragment()).commit();
     }
 }

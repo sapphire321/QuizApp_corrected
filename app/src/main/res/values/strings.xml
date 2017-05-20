@@ -7,4 +7,9 @@
     <string name="summarytext">Now go and create awesomeness!</string>
     <string name="summarytextshame">But hey, head up and try again</string>
     <string name="shame">Time is up!</string>
+    <string name="questionQ1">Is this layout containing correct colors?</string>
+    <string name="questionQ2">Is this acceptable color for the text with this layout color?</string>
+    <string name="questionQ3">Avoid placing a large amount of colored text on colored backgrounds?</string>
+    <string name="questionQ4">Text selection can use your secondary color as an accent?</string>
+    <string name="questionQ5">Use a secondary color on top of a background if there is not enough contrast between the two colors?</string>
 </resources>

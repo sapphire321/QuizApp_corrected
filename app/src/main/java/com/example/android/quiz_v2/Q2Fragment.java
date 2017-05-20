@@ -7,12 +7,11 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
-
-import java.util.ArrayList;
 
 import static com.example.android.quiz_v2.MainActivity.score;
 
@@ -23,6 +22,8 @@ public class Q2Fragment extends Fragment
 {
     private RadioGroup buttonsGroup;
     private String[] answers ={"Do", "Don't"};
+    private ImageView questionImage;
+    private TextView questionText;
 
     public Q2Fragment() {
         // Required empty public constructor
@@ -31,28 +32,15 @@ public class Q2Fragment extends Fragment
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-       final View rootView = inflater.inflate(R.layout.word_list, container, false);
+       final View rootView = inflater.inflate(R.layout.row, container, false);
         super.onCreate(savedInstanceState);
 
-
-        // Create a list of words
-        final ArrayList<Question> words = new ArrayList<Question>();
-        words.add(new Question(R.drawable.textcolor, "Is this acceptable color for the text with this layout color?"));
-
-        // Create an {@link QuestionAdapter}, whose data source is a list of {@link Word}s. The
-        // adapter knows how to create list items for each item in the list.
-        //WordAdapter adapter = new WordAdapter(getActivity(), words, R.color.category_colors);
-        QuestionAdapter adapter = new QuestionAdapter(getActivity(), words, 0);
-
-        // Find the {@link ListView} object in the view hierarchy of the {@link Activity}.
-        // There should be a {@link ListView} with the view ID called list, which is declared in the
-        // word_list.xml layout file.
-        ListView listView = (ListView) rootView.findViewById(R.id.list);
-
-        // Make the {@link ListView} use the {@link WordAdapter} we created above, so that the
-        // {@link ListView} will display list items for each {@link Word} in the list.
-        listView.setAdapter(adapter);
-
+        // Question in Image View
+        questionImage = (ImageView) rootView.findViewById(R.id.imageView);
+        questionImage.setImageResource(R.drawable.textcolor);
+        // Question in TextView
+        questionText = (TextView) rootView.findViewById(R.id.textView);
+        questionText.setText(R.string.questionQ2);
 
         // FINDING THE RADIO GROUP TO DISPLAY THE BUTTONS FOR CHOOSING THE ANSWER
         buttonsGroup = (RadioGroup) rootView.findViewById(R.id.radio_group);
